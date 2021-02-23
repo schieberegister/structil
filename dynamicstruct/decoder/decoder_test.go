@@ -312,7 +312,7 @@ array_string_field = ["array_str_1", "array_str_2"]
 `)
 )
 
-func TestDecodeHasOnlyPrimitive(t *testing.T) {
+func TestDynamicStructHasOnlyPrimitive(t *testing.T) {
 	t.Parallel()
 
 	data := []byte(`
@@ -332,12 +332,12 @@ func TestDecodeHasOnlyPrimitive(t *testing.T) {
 	StringField string
 }`
 
-	t.Run("TestDecodeHasOnlyPrimitive", func(t *testing.T) {
+	t.Run("TestDynamicStructHasOnlyPrimitive", func(t *testing.T) {
 		testCorrectCase(t, data, TypeJSON, false, false, 5, wantDef)
 	})
 }
 
-func TestDecodeHasObj(t *testing.T) {
+func TestDynamicStructHasObj(t *testing.T) {
 	t.Parallel()
 
 	data := []byte(`
@@ -354,12 +354,12 @@ func TestDecodeHasObj(t *testing.T) {
 	StringField string
 }`
 
-	t.Run("TestDecodeHasObj", func(t *testing.T) {
+	t.Run("TestDynamicStructHasObj", func(t *testing.T) {
 		testCorrectCase(t, data, TypeJSON, false, false, 2, wantDef)
 	})
 }
 
-func TestDecodeHasArrayString(t *testing.T) {
+func TestDynamicStructHasArrayString(t *testing.T) {
 	t.Parallel()
 
 	data := []byte(`
@@ -376,12 +376,12 @@ func TestDecodeHasArrayString(t *testing.T) {
 	StringField string
 }`
 
-	t.Run("TestDecodeHasArrayString", func(t *testing.T) {
+	t.Run("TestDynamicStructHasArrayString", func(t *testing.T) {
 		testCorrectCase(t, data, TypeJSON, false, false, 2, wantDef)
 	})
 }
 
-func TestDecodeHasArrayInt(t *testing.T) {
+func TestDynamicStructHasArrayInt(t *testing.T) {
 	t.Parallel()
 
 	data := []byte(`
@@ -398,7 +398,7 @@ func TestDecodeHasArrayInt(t *testing.T) {
 	StringField string
 }`
 
-	t.Run("TestDecodeHasArrayInt", func(t *testing.T) {
+	t.Run("TestDynamicStructHasArrayInt", func(t *testing.T) {
 		testCorrectCase(t, data, TypeJSON, false, false, 2, wantDef)
 	})
 }
